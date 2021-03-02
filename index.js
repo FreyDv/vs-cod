@@ -1,59 +1,50 @@
-function greet(sneme) {
-  var name = 'Tana'
-  let age = 15
-  return name + ' ' + sneme + ' ' + age + ' e.o. live in  '
-}
-s2 = greet('Chernova')
-console.dir(greet) // info about function
+var mas = ['BMW', 'Ford', 'Mazda', 'Mersedes']
+console.log('mas:', mas)
 
-let counter = 0
-i1 = setInterval(function () {
-  console.log(':', counter++)
-  if (counter == 1) clearInterval(i1)
-}, 1000)
+mas.push('Reno')
+console.log('После метода mas.push(Reno):', mas)
 
-//Ctrelochnie funcii
+mas.unshift('Volga')
+console.log('После метода mas.unshift(Volga):', mas)
 
-const arrow = (name) => {
-  console.log('hi:', name)
-}
-arrow('Daniil')
+console.log('mas.shift():', mas.shift())
+console.log('После метода mas.shift():', mas)
 
-arrow2 = (name) => console.log('name:', name)
-arrow2('Valeria')
+console.log('mas.shift():', mas.pop())
+console.log('После метода mas.pop():', mas)
 
-const pow2 = (num) => num ** 2
+console.log('После метода mas.reverse():', mas)
 
-console.log('pow2(5):', pow2(5))
+const text = 'hi we stady js'
 
-//Параметры по умолчанию
-let sum = (a, b = 1) => a + b
-console.log('sum = (a, b = 1) => a + b; sum(41):', sum(41))
+const people = [
+  { namex: 'Danii', budget: 15000 },
+  { namex: 'Lera', budget: 0 },
+  { namex: 'Babushka', budget: 16000 },
+]
 
-function sumx(...all) {
-  let resul = 0
-  for (let num of all) {
-    resul += num
-  }
-  return resul
-}
-var x = sumx(1, 5, 7, 5, 4, 1, 3, 5, 4, 4, -85, 56, 8, 4, 4, 5, 10)
-console.log(x)
+var index = mas.indexOf('BMW')
+const reverseText = text.split(' ').reverse().join(' ')
+console.log('После метода text.split( ):', mas)
 
-//Замыкание
+console.log('mas.indexOf(BMW):', index)
+mas[index] = 'Porhe'
+console.log('reverseText:', reverseText)
 
-function createMeber(name) {
-  return var xf = (sNeame)=> {
-    console.log(name +' ' +sNeame)
-  }
-}
+var indix = people.findIndex(function (person) {
+  return person.budget === 15000
+})
+console.log('People[index]:', people[indix])
 
-const LogWithLastName = createMeber('Даниил')
-console.log(LogWithLastName('Frey'))
-console.log(LogWithLastName('Malinina'))
+var indix2 = people.find(function (person) {
+  return person.namex === 'Lera'
+})
+console.log('people.find(function(person):', indix2)
 
+const persen = people.find((persen) => persen.budget == 16000)
+console.log('persen:', persen)
 
-//test
-//mist
-//pist
+console.log(mas.includes('Ford'))
 
+uperCaseMas = mas.map((mas) => mas.toUpperCase())
+console.log('mas.map(mas=>mas.toUpperCase):', uperCaseMas)
