@@ -48,3 +48,9 @@ console.log(mas.includes('Ford'))
 
 uperCaseMas = mas.map((mas) => mas.toUpperCase())
 console.log('mas.map(mas=>mas.toUpperCase):', uperCaseMas)
+
+var x = 'Лера'
+var y = 'Даня'
+
+var z = (Love1, Love2) => `${Love2} очень сильно любит ${Love1.replace('Леру')}`
+console.log(z(x, y))

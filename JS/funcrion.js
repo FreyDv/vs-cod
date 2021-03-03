@@ -43,17 +43,15 @@ console.log(x)
 //Замыкание
 
 function createMeber(name) {
-  return  xf = (sNeame)=> {
-    console.log(name +' ' +sNeame)
-  }
+  return (xf = (sNeame) => {
+    console.log(name + ' ' + sNeame)
+  })
 }
 
 const LogWithLastName = createMeber('Даниил')
 console.log(LogWithLastName('Frey'))
 console.log(LogWithLastName('Malinina'))
 
-
 //test
 //mist
 //pist
-

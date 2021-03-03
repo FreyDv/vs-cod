@@ -78,5 +78,5 @@ function logPerson(s, name, age) {
 }
 var personNAme = `Daniil`
 var PersonAdge = 23
-var otput = logPerson` Имя: ${personNAme}, возраст: ${PersonAdge}!`
+var otput = logPerson` Имя: ${personNAme}, возраст: ${PersonAdge}`
 console.log(otput)
