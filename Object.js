@@ -1,4 +1,4 @@
-const Persen = {
+const Per = {
   firstName: 'Daniil',
   lastName: 'Frey',
   bithdeyCount: 0,
@@ -10,62 +10,78 @@ const Persen = {
   isMeris: true,
   'complex key': 'Complex Value',
   greet: function () {
-    console.log('greet from persen ' + this.firstName)
+    console.log('greet from Per ' + this.firstName)
   },
   addLanguage: (len) => {
-    if ('string' == typeof Persen.languges[0]) {
+    if ('string' == typeof Per.languges[0]) {
       if ('string' == typeof len) {
-        Persen.languges.push(len)
-        console.log(
-          'Сейчас ' + Persen.firstName + ' знает ' + Persen.languges.length
-        )
+        Per.languges.push(len)
+        console.log('Сейчас ' + Per.firstName + ' знает ' + Per.languges.length)
         let xas = 0
-        Persen.languges.forEach((element) => {
-          console.log(xas++ + ': ' + Persen.languges[xas - 1])
+        Per.languges.forEach((element) => {
+          console.log(xas++ + ': ' + Per.languges[xas - 1])
         })
       }
     }
   },
-  //z: function happyBirthday(Persen.age(Persen.year,Persen.countBD())) {
-  //  Persen.bithdeyCount++
+  //z: function happyBirthday(Per.age(Per.year,Per.countBD())) {
+  //  Per.bithdeyCount++
   //  console.log(`С днем рождения!!!! теперь ${
-  //    Persen.firstName
+  //    Per.firstName
   //  } имеет солидный возраст `,)
   // },
 }
 
-console.log('0 Persen:', Persen)
+console.log('0 Per:', Per)
 console.log(
-  '1 Обращение к полям через имя поля (Persen.firstName):',
-  Persen.firstName
+  '1 Обращение к полям через имя поля (Per.firstName):',
+  Per.firstName
 )
 console.log(
-  '2 Обращение к полям через имя поля в строке (Persen[age]):',
-  Persen['age']
+  '2 Обращение к полям через имя поля в строке (Per[age]):',
+  Per['age']
 )
 
-console.log('3 Persen.greet():', Persen.greet())
+console.log('3 Per.greet():', Per.greet())
 
-console.log('4 Persen["complex key"]:', Persen['complex key'])
+console.log('4 Per["complex key"]:', Per['complex key'])
 
 var a = 'xer'
 b = 'pisa'
 z = typeof a == 'string'
 console.log('a==b:', z)
 
-Persen.addLanguage('germani')
-console.log('Persen.year:', Persen.year)
-console.log('Persen.bithdeyCount:', Persen.bithdeyCount)
+Per.addLanguage('germani')
+console.log('Per.year:', Per.year)
+console.log('Per.bithdeyCount:', Per.bithdeyCount)
 console.log('new Date().getFullYear():', new Date().getFullYear())
-console.log('Persen.age:', Persen.age(Persen.year, Persen.bithdeyCount))
+console.log('Per.age:', Per.age(Per.year, Per.bithdeyCount))
 
 const {
-  firstName: name,
+  firstName: namex,
   lastName: sername,
-  age: aaa = Person.age(Persen.year, Persen.bithdeyCount),
-} = Persen
+  age: aaa = Person.age(Per.year, Per.bithdeyCount),
+} = Per
 console.log(
-  `Деструктивизация Persen в  переменные name,sername,age
-const {firstName:name, lastName:sername, age}=Persen :`,
-  name + ' ' + sername + ' ' + aaa
+  `Деструктивизация Per в  переменные name,sername,age
+const {firstName:name, lastName:sername, age}=Per :`,
+  namex + ' ' + sername + ' ' + aaa
 )
+
+const logger = {
+  keys() {
+    console.log('Object Keys:', Object.keys(this))
+  },
+
+  keysValue() {
+    Object.keys(this).forEach((key) => {
+      console.log(key + ': ', this[key])
+    })
+  },
+}
+
+const bound = logger.keys.bind(Per) // Создает функцию с привязаным контекстом который мы передали
+bound()
+
+logger.keys.call(Per) // просто выплевывает тоже самое что и бинд но привязывет только на момент выплевывания
+logger.keysValue.call(Per)
