@@ -1,6 +1,6 @@
-const Per = {
-  firstName: 'Daniil',
-  lastName: 'Frey',
+ Per = {
+   firstName: 'Daniil',
+   lastName: 'Frey',
   bithdeyCount: 0,
   year: 1998,
   age: (year, countBD) => {
