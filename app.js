@@ -10,4 +10,4 @@ const person = {
 
 }
 
-console.log('ПНХ:',Hello)
+console.log('ПНХ:',Hello())
