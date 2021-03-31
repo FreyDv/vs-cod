@@ -13,11 +13,11 @@ let pers = {
 
 // console.log(pers)
 
-// for (let key in pers) {
-//   if (pers.hasOwnProperty(key)){
-//     console.log('key: ', key + ' value: ' + pers[key])
-//   } 
-// }
+for (let key in pers) {
+  if (pers.hasOwnProperty(key)){
+    console.log('key: ', key + ' value: ' + pers[key])
+  } 
+}
 
 // Object.keys(pers).forEach((ik)=>{
 //   console.log(ik + ': ' + pers[ik])
