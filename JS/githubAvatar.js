@@ -20,17 +20,14 @@ function httpGet(url) {
     xhr.send()
   })
 }
-httpGet('/article/promise/user.json').then(
-  (response) => alert(`Fulfilled: ${response}`),
-  (error) => alert(`Rejected: ${error}`)
-)
 
 // сделать запрос
-httpGet('/article/promise/user.json')
+httpGet('/user.json')
   // 1. Получить данные о пользователе в JSON и передать дальше
   .then((response) => {
     console.log(response)
     let user = JSON.parse(response)
+    console.log('user:', user)
     return user
   })
   // 2. Получить информацию с github
@@ -43,10 +40,18 @@ httpGet('/article/promise/user.json')
     console.log(githubUser)
     githubUser = JSON.parse(githubUser)
 
+    let nameTeg = document.createElement('h1')
+    nameTeg.textContent = githubUser.login
+    document.body.appendChild(nameTeg)
+
     let img = new Image()
     img.src = githubUser.avatar_url
     img.className = 'promise-avatar-example'
     document.body.appendChild(img)
 
-    setTimeout(() => img.remove(), 3000) // (*)
+    setTimeout(() => {
+      img.remove()
+      nameTeg.remove()
+
+    }, 10000) // (*)
   })
