@@ -28,10 +28,10 @@ class Rebit extends Animal {
     }
   }
   stop() {
-    let x= 1000
+    let x = 1000
     setTimeout(() => {
       super.stop()
-      console.log('After: ',x/1000+' seconds')
+      console.log('After: ', x / 1000 + ' seconds')
       this.hide()
     }, x)
   }
@@ -57,3 +57,19 @@ rebit.stop()
 console.log('rebit.earLength:', rebit.earLength)
 
 // https://learn.javascript.ru/class-inheritance
+// функция генератор
+function* vf(i) {
+  yield i++
+  console.log('yield1:', i)
+  yield i++
+  console.log('yield2:', i)
+  yield i++
+  console.log('yield3:', i)
+}
+
+let cv = vf(4)
+
+console.log('cv.next1():', cv.next().value)
+console.log('cv.next2():', cv.next().value)
+console.log('cv.next3():', cv.next().value)
+console.log('cv.next4():', cv.next().value)
