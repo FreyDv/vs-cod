@@ -46,3 +46,16 @@ async function asyncExample(){
 }
 
 asyncExample(1000)
+
+(async () => {
+  let userSON = await fetch('/user.json')
+  let user = await userSON.json()
+  console.log('User:', user)
+  let githubRespounse = await fetch(`https://api.github.com/users/${user.name}`)
+  let githubUser = await githubRespounse.json()
+  console.log('githubUser:', githubUser)
+  let img = document.createElement('img')
+  img.src = githubUser.avatar_url
+  img.id = 'ghAvatar'
+  document.body.append(img)
+})()

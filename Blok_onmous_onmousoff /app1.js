@@ -99,3 +99,5 @@ function removeColor(elem) {
 
 const getRandomColor = () =>
   squareColors[Math.floor(Math.random() * squareColors.length)]
+
+  
